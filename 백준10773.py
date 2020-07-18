@@ -25,7 +25,14 @@ for i in range(N):
         s.push(zam)
     
     elif zam == 0:
-        Sum = Sum + s.pop()
-    
+        s.pop()
+
+for j in range(len(s.stack)):
+     Sum = Sum + s.pop()    
 
 print(Sum)
+
+
+
+
+
