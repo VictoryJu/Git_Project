@@ -25,9 +25,9 @@ class Stack:
     def pop(self):
         if len(self.stack) != 0 :
             num = self.stack.pop()    
-            print(num)
+            return num
         else:
-            print(-1)     
+            return -1   
 
     def size(self):
         print(len(self.stack))
@@ -54,16 +54,16 @@ i=0
 num = int(sys.stdin.readline())
 
 for i in range(num):
-    choice = str(sys.stdin.readline())
 
-    if choice == 'top':
+    choice = list(map(str,sys.stdin.readline().rstrip().split(' ')))
+
+    if choice[0] == 'top':
         s.top()
-    elif choice == 'empty':
+    elif choice[0] == 'empty':
         s.empty()
-    elif choice == 'size':
+    elif choice[0] == 'size':
         s.size()
-    elif choice == 'pop':
-        s.pop()
-    elif choice == 'push':
-        X = input()
-        s.push(X)
+    elif choice[0] == 'pop':
+        print(s.pop())
+    elif choice[0] == 'push':
+        s.push(choice[1])
