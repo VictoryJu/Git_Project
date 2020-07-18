@@ -12,6 +12,7 @@ top: 스택의 가장 위에 있는 정수를 출력한다.
 만약 스택에 들어있는 정수가 없는 경우에는 -1을 출력한다.
 
 """
+import sys
 
 class Stack:
 
@@ -50,10 +51,10 @@ class Stack:
 
 s = Stack()
 i=0
-num = int(input())
+num = int(sys.stdin.readline())
 
 for i in range(num):
-    choice = input()
+    choice = str(sys.stdin.readline())
 
     if choice == 'top':
         s.top()
