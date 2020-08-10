@@ -1,34 +1,47 @@
+# (와 )를 구별 count로 숫자를 구별 
+# (면 push )면 pop
+# 빠른입출력으로 수정하면 끝
 import sys
 
-class Stack:
-
-    def __init__(self):
-        self.stack = []
-    
-    def push(self,Str):
-        self.stack.append(Str)
-    
-    def pop(self):
-        St = self.stack.pop()
-        return St
+num = int(sys.stdin.readline())
 
 
-N = int(input())
-s = Stack()
+for i in range(num):
+    arr = []
+    word = sys.stdin.readline()
+    temp1 = 0
+    for j in word: 
+        if j == '(':
+            arr.append(j)
+            temp1 = temp1 +1 # 여기 처리를 어케 할 것인지
+        elif j ==')':
+            if temp1 > 0:
+                arr.pop()
+                temp1 = temp1-1
+            else:
+                #print("NO")
+                temp1 = temp1-1
+                break
+                
+    #if temp1-temp == 0:
+    if temp1 == 0:
+        print("Yes")
+    else:
+        print("No")
+  
+    #     else:
+    #         if len(arr)==0:
+    #             num -= 1
+    #             break
+    #         else:
+    #             arr.pop()
+    #             num+=1  
 
-for i in range(N):
-    s.push(list(map(str,sys.stdin.readline().rstrip().split(' '))))
+    # if num > 0 :
+    #     print("NO")
+    # else:
+    #     if len(arr) == 0:
+    #         print("YES")
+    #     else:
+    #         print("NO")
 
-for j in range(N):
-    result = s.pop()
-    if result == '(':
-        count = count + 1
-    elif result == ')':
-        count2 = count2 + 1
-
-sub = count - count2
-
-if sub == 0:
-    print("Yes")
-else:
-    print("NO")
