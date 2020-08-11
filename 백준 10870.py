@@ -1,7 +1,7 @@
 def Fibo(num):
     if num>=2:
-        result = (num-1)+(num-2)
-        return result + Fibo(num-1)
+        result = (Fibo(num-1))+(Fibo(num-2))
+        return result 
     elif num == 1:
         return 1
     else:
