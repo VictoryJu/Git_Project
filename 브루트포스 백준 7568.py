@@ -1,25 +1,24 @@
 
 x = []
 y = []
-num = []
-i=0
-j=0
+rank = []
+
 n=int(input())
 
-for i in range(n):
-    x[i] = int(input())
-    y[i] = int(input())
+for i in range(0,n):    
+    x,y = map(int,input().split())
     
+
 for j in range(n):
     num1 = n
     for z in range(n):
         if x[j] > x[z] and y[j] > y[z]:
-            num[j] = num1+0
+            rank[j] = num1+0
         elif x[j] > x[z] and y[j] < y[z]:
-            num[j] = num1-1
+            rank[j] = num1-1
         elif x[j] < x[z] and y[j] > y[z]:
-            num[j] = num1-1
+            rank[j] = num1-1
 
 i=0
 for i in range(n):
-    print(num[i])
+    print(rank[i])
