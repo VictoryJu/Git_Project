@@ -3,18 +3,20 @@
 i=0
 W = []
 H = []
-rank = []
-num = 0
+rank = [1]*100
 n = int(input())
+
 for i in range(n):
     W.append(int(input()))
     H.append(int(input()))
 
 for i in range(n):
-    num = 0
+    
     for j in range(n):
-        if W[i] < W[j]:
-            rank[i] = num + 1
+        if W[i] < W[j] and H[i] < H[j]:
+            rank[i] = rank[i]+1
+        
+        
         
 for i in range(n):
     print(rank[i])
