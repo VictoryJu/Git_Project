@@ -3,7 +3,7 @@
 i=0
 W = []
 H = []
-rank = [1]*100
+
 n = int(input())
 
 for i in range(n):
@@ -11,13 +11,13 @@ for i in range(n):
     H.append(int(input()))
 
 for i in range(n):
-    
+    rank = 1
     for j in range(n):
         if W[i] < W[j] and H[i] < H[j]:
-            rank[i] = rank[i]+1
+            rank += 1
+    print(rank)    
         
         
-        
-for i in range(n):
-    print(rank[i])
+# for i in range(n):
+#     print(rank[i],end=' ')
             
